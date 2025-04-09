@@ -13,16 +13,15 @@ A secure Flask REST API with:
 
 ---
 ## Requirements
-
 Install all dependencies from the `requirements.txt` file:
+pip install -r requirements.txt
 ## Test Endpoints using Swagger
 ** http://localhost:5000/apidocs/**
 ## Endpoints Descriptions:
-*Register a new user using: http://localhost:5000/register*
+Register a new user using: http://localhost:5000/register
 *login and authenticate a user using: http://localhost:5000/login*
 *Access a protected route using: http://localhost:5000/protected*
 
-pip install -r requirements.txt
 ## Environment Configuration
 
 Create a `.env` file in your root directory:
@@ -30,5 +29,5 @@ Create a `.env` file in your root directory:
 env
 # .env
 JWT_SECRET_KEY=your-secret-key
-FLASK_ENV=development
+
 
