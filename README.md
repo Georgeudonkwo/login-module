@@ -22,6 +22,9 @@ pip install -r requirements.txt
 2. login and authenticate a user using: http://localhost:5000/api/auth/v1/login
 3. Access a protected route using: http://localhost:5000/auth/v1/user/profile
 
+## API Documentation
+[view the api documentation here] (documentations/API Reference and Documentation for Login Module.pdf)
+
 ## Environment Configuration
 
 Create a `.env` file in your root directory:
