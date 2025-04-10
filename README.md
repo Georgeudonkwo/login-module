@@ -20,7 +20,7 @@ pip install -r requirements.txt
 ## Endpoints Descriptions:
 1. Register a new user using: http://localhost:5000/api/auth/v1/register
 2. login and authenticate a user using: http://localhost:5000/api/auth/v1/login
-3. Access a protected route using: http://localhost:5000/auth/v1/user/profile*
+3. Access a protected route using: http://localhost:5000/auth/v1/user/profile
 
 ## Environment Configuration
 
