@@ -18,9 +18,9 @@ pip install -r requirements.txt
 ## Test Endpoints using Swagger
 ** http://localhost:5000/apidocs/**
 ## Endpoints Descriptions:
-Register a new user using: http://localhost:5000/register
-*login and authenticate a user using: http://localhost:5000/login*
-*Access a protected route using: http://localhost:5000/protected*
+1. Register a new user using: http://localhost:5000/api/auth/v1/register
+2. login and authenticate a user using: http://localhost:5000/api/auth/v1/login
+3. Access a protected route using: http://localhost:5000/auth/v1/user/profile*
 
 ## Environment Configuration
 

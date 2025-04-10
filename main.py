@@ -29,7 +29,7 @@ def create_tables():
     db.create_all()
 
 # Register endpoint
-@app.route('/register', methods=['POST'])
+@app.route('/api/v1/auth/register', methods=['POST'])
 @swag_from({
     'tags': ['Authentication'],
     'parameters': [
@@ -67,7 +67,7 @@ def register():
     return jsonify({"msg": "User registered successfully"}), 201
 
 # Login endpoint
-@app.route('/login', methods=['POST'])
+@app.route('/api/auth/v1/login', methods=['POST'])
 @swag_from({
     'tags': ['Authentication'],
     'parameters': [
@@ -103,13 +103,14 @@ def login():
     return jsonify(access_token=access_token), 200
 
 # Protected endpoint
-@app.route('/protected', methods=['GET'])
+@app.route('/api/auth/v1/user/profile', methods=['GET'])
 @jwt_required()
 @swag_from({
     'tags': ['Protected'],
     'security': [{'BearerAuth': []}],
     'responses': {
-        200: {'description': 'Access granted'}
+        200: {'description': 'Access granted'},
+         401: {'description': 'Unauthorized - Invalid token or no token provided'},
     }
 })
 def protected():
