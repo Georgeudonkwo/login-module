@@ -29,7 +29,7 @@ def create_tables():
     db.create_all()
 
 # Register endpoint
-@app.route('/api/v1/auth/register', methods=['POST'])
+@app.route('/api/auth/v1/register', methods=['POST'])
 @swag_from({
     'tags': ['Authentication'],
     'parameters': [
