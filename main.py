@@ -10,8 +10,24 @@ load_dotenv()
 app = Flask(__name__)
 
 # Configuration
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
-app.config['JWT_SECRET_KEY'] = 'your-secret-key'
+app.config['SQLALCHEMY_DATABASE_URI'] =os.environ.get('SQLALCHEMY_DATABASE_URI','sqlite:///users.db') 
+app.config['JWT_SECRET_KEY'] =os.environ.get('JWT_SECRET_KEY')
+app.config['SWAGGER'] = {
+    'title': 'Your API',
+    'securityDefinitions': {
+        'Bearer': {
+            'type': 'apiKey',
+            'name': 'Authorization',
+            'in': 'header',
+            'description': 'JWT Authorization header using the Bearer scheme. Example: "Authorization: Bearer {token}"'
+        }
+    },
+    'security': [
+        {
+            'Bearer': []
+        }
+    ]
+}
 
 # Extensions
 db = SQLAlchemy(app)
